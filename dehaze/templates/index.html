@@ -1,99 +1,133 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
 
-<div class="nav">
-    <ul>
-        <li><a href="">在线去雾系统</a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-        <li><a href="imag.njust.edu.cn">关于</a></li>
-    </ul>
-</div>
-<div style="text-align:center;margin:20px 0">
-    <h1>模式选择</h1>
-</div>
-<div style="overflow:auto;text-align:center;margin-top:20px">
-    <span style="margin-left:20px">调试模式 <input type="checkbox" id='debug' onclick='check(this)'/></span>
-    <span style="margin-left:20px">常规模式 <input type="checkbox" id='r' onclick='check(this)'/></span>
-    <span style="margin-left:20px">快速模式 <input type="checkbox" id='show' checked='debug' onclick='check(this)'/></span>
-</div>
+<div class="container-fluid">
 
-<div class="nav1" style="text-align:center;margin:20px 0">
-    <ul> <li><a href="">参数设置</a></li> </ul>
-</div>
-<table cellspacing="2" cellpadding="0" border="0" style="width:900px;margin:0 auto">
-    <tr>
-        <td> <input type="text" placeholder="环境光A:220" name="lname"> </td>
-        <td> <input type="text" placeholder="去雾程度w:0.9" name="lname"> </td>
-        <td> <input type="text" placeholder="滤波窗口:15" name="lname"> </td>
-        <td> <input type="text" placeholder="eps:0.0001" name="lname"> </td>
-        <td> <input type="text" placeholder="r:60" name="lname"> </td>
-    </tr>
-    <tr>
-        <td> <input type="text" placeholder="宏块大小mv:8" name="lname"> </td>
-        <td> <input type="text" placeholder="搜索范围p:7" name="lname"> </td>
-        <td> <input type="text" placeholder="I_frame:1" name="lname"> </td>
-        <td> <input type="text" placeholder="slide_wnd:3" name="lname"> </td>
-        <td> <input type="text" placeholder="镜头分割阈值:0.0025" name="lname"> </td>
-    </tr>
-</table>
+    <div class="nav">
+        <ul>
+            <li><a href="">在线去雾系统</a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href="imag.njust.edu.cn">关于</a></li>
+        </ul>
+    </div>
+    <div style="text-align:center;margin:20px 0">
+        <h1>模式选择</h1>
+    </div>
+    <div style="overflow:auto;text-align:center;margin-top:20px">
+        <!--
+        <span style="margin-left: 20px;"><label>调试模式<input type="radio" name="aa" id="debug"/></label></span>
+        <span style="margin-left: 20px;">><label>常规模式<input type="radio" name="aa" id="r"/></label></span>
+        <span style="margin-left: 20px;">><label>快速模式<input type="radio" name="aa" id="show"/></label></span>
+        -->
+        <span style="margin-left:20px">调试模式 <input type="checkbox" id='debug' onclick='check(this)'/></span>
+        <span style="margin-left:20px">常规模式 <input type="checkbox" id='r' onclick='check(this)'/></span>
+        <span style="margin-left:20px">快速模式 <input type="checkbox" id='show' checked='debug'
+                                                   onclick='check(this)'/></span>
+    </div>
 
-
-<div  style="text-align:center;margin:0px 0">
-    <h1>CLICK TO DEHAZE</h1>
-</div>
-<table cellspacing="0" cellpadding="0" border="0" align="center">
-    <tr style='display:block;margin:10px 0;'>
-        <td><img id="pic1" src="http://127.0.0.1:8000/static/image/t055.jpg" HEIGHT="" , width="250" /></td>
-        <td><span id='dark'></span></td>
-        <td><span id='guided_t'></span></td>
-        <td><span id='res'></span></td>
-    </tr>
-</table>
-<table cellspacing="0" cellpadding="0" border="0" align="center">
-    <tr style='display:block;margin:10px 0;'>
-        <td><img id="pic2" src="http://127.0.0.1:8000/static/image/p070.jpg" HEIGHT="" , width="250" /></td>
-        <td><span id='dark2'></span></td>
-        <td><span id='guided_t2'></span></td>
-        <td><span id='res2'></span></td>
-    </tr>
-</table>
-<table cellspacing="0" cellpadding="0" border="0" align="center">
-    <tr style='display:block;margin:10px 0;'>
-        <td><img id="pic3" src="http://127.0.0.1:8000/static/image/tree.png" HEIGHT="" , width="250" /></td>
-        <td><span id='dark3'></span></td>
-        <td><span id='guided_t3'></span></td>
-        <td><span id='res3'></span></td>
-    </tr>
-</table>
-<br/>
-<div class = "n2" id ="upload" style="text-align:center;margin:0px 0">
-<ul> <li><a href="">上传文件</a></li> </ul>
-</div>
-<table cellspacing="0" cellpadding="0" border="0" align="center" width="">
-    <tr>
-        <td>
-            <input type="file" name="imgOne" id="imgOne" onchange="preImg(this.id,'imgPre');" />
-        </td>
-    </tr>
-   </table>
-<video width="320" height="240" controls="controls">
-  <source src="/static/image/ori.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+    <div class="nav1" style="text-align:center;margin:20px 0">
+        <ul>
+            <li><a href="">参数</a></li>
+        </ul>
+    </div>
+    <table cellspacing="2" cellpadding="0" border="0" style="width:900px;margin:0 auto">
+        <tr>
+            <td><input type="text" placeholder="环境光A:220" name="lname"></td>
+            <td><input type="text" placeholder="去雾程度w:0.9" name="lname"></td>
+            <td><input type="text" placeholder="滤波窗口:15" name="lname"></td>
+            <td><input type="text" placeholder="eps:0.0001" name="lname"></td>
+            <td><input type="text" placeholder="r:60" name="lname"></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="宏块大小mv:8" name="lname"></td>
+            <td><input type="text" placeholder="搜索范围p:7" name="lname"></td>
+            <td><input type="text" placeholder="I_frame:1" name="lname"></td>
+            <td><input type="text" placeholder="slide_wnd:3" name="lname"></td>
+            <td><input type="text" placeholder="镜头分割阈值:0.0025" name="lname"></td>
+        </tr>
+    </table>
 
 
-<video width="320" height="240" controls="controls">
-    <source src="/static/video/1结果-交通-A统一220+导向.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
-<table cellspacing="0" cellpadding="0" border="0" align="center">
-    <tr id="p3" style='display:block;margin:0px 0;'>
-        <td> <img id="imgPre" src="" style="margin: 0px auto 0;" width="250" ,/></td>
-        <td> <span id='dark1'></span> </td>
-        <td> <span id='guided_t1'></span> </td>
-        <td> <span id='res1'></span> </td>
-    </tr>
-</table>
+    <div style="text-align:center;margin:0px 0">
+        <h1>CLICK TO DEHAZE</h1>
+    </div>
+    <table cellspacing="0" cellpadding="0" border="0" align="center">
+        <tr style='display:block;margin:10px 0;'>
+            <td><img id="pic1" src="http://127.0.0.1:8000/static/image/t055.jpg" HEIGHT="" , width="250"/></td>
+            <td><span id='dark'></span></td>
+            <td><span id='guided_t'></span></td>
+            <td><span id='res'></span></td>
+        </tr>
+    </table>
+    <table cellspacing="0" cellpadding="0" border="0" align="center">
+        <tr style='display:block;margin:10px 0;'>
+            <td><img id="pic2" src="http://127.0.0.1:8000/static/image/p070.jpg" HEIGHT="" , width="250"/></td>
+            <td><span id='dark2'></span></td>
+            <td><span id='guided_t2'></span></td>
+            <td><span id='res2'></span></td>
+        </tr>
+    </table>
+    <table cellspacing="0" cellpadding="0" border="0" align="center">
+        <tr style='display:block;margin:10px 0;'>
+            <td><img id="pic3" src="http://127.0.0.1:8000/static/image/tree.png" HEIGHT="" , width="250"/></td>
+            <td><span id='dark3'></span></td>
+            <td><span id='guided_t3'></span></td>
+            <td><span id='res3'></span></td>
+        </tr>
+    </table>
+    <br/>
+
+
+    <div class="n2" id="upload1" style="text-align:center;margin:0px 0">
+        <ul>
+            <li><a href="">选择文件</a></li>
+        </ul>
+    </div>
+
+    <table cellspacing="0" cellpadding="0" border="0" align="center" width="">
+        <tr>
+            <td>
+                <input type="file" name="imgOne" id="imgOne" onchange="preImg(this.id,'imgPre');"/>
+            </td>
+        </tr>
+    </table>
+
+    <table cellspacing="0" cellpadding="0" border="0" align="center">
+        <tr id="p3" style='display:block;margin:0px 0;'>
+            <td><img id="imgPre" src="" style="margin: 0px auto 0;" width="250" ,/></td>
+            <td><span id='dark1'></span></td>
+            <td><span id='guided_t1'></span></td>
+            <td><span id='res1'></span></td>
+        </tr>
+    </table>
+
+
+    <div class="n2" id="upload" style="text-align:center;margin:0px 0">
+        <ul>
+            <li><a href="#">视频演示</a></li>
+        </ul>
+    </div>
+<!--
+
+    <table cellspacing="0" cellpadding="0" border="0" align="center" width="">
+        <tr>
+            <td>
+                <input type="file" name="imgOne" id="imgOne1" onchange="preImg(this.id,'imgPre');"/>
+            </td>
+        </tr>
+    </table>
+-->
+    <video width="320" height="240" controls="controls">
+        <source src="/static/image/ori.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+
+    <video width="320" height="240" controls="controls">
+        <source src="/static/video/1结果-交通-A统一220+导向.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 </div>
 
 
@@ -101,27 +135,27 @@ Your browser does not support the video tag.
 <script src="/static/js/index.js"></script>
 
 <style>
-.nav ,.nav1,.n2 {
-    background-color: #559AF1;
-}
+    .nav, .nav1, .n2 {
+        background-color: #559AF1;
+    }
 
-.n2,.n3,.n4,.nav ul,.nav1 ul {
-    height: 36px;
-    line-height: 36px;
-    text-align: center;
-}
+    .n2, .n3, .n4, .nav ul, .nav1 ul {
+        height: 36px;
+        line-height: 36px;
+        text-align: center;
+    }
 
-.n2 ul li ,.nav ul li ,.nav1 ul li{
-    margin: 0 10% 0 10%;
-    display: inline;
-}
+    .n2 ul li, .nav ul li, .nav1 ul li {
+        margin: 0 10% 0 10%;
+        display: inline;
+    }
 
-.n2 ul li a,.nav ul li a ,.nav1 ul li a{
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    font-family: simhei;
-}
+    .n2 ul li a, .nav ul li a, .nav1 ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        font-family: simhei;
+    }
 </style>
 </body>
 </html>

@@ -18,14 +18,11 @@ def darkChannel(request):
     cmd = matlab + '"' + func + ' ' + image + ' ' + path_d + " " + path_t + " " + path_gt + " " + path_res + '"'
     print cmd
     os.system(cmd)
-    return HttpResponse(
-)
+    return HttpResponse()
 
 
+## for debug
 
-
-# matlab = '/Applications/MATLAB_R2014b.app/bin/matlab -nodesktop -nosplash -r '
-#
 # def index2(req):
 #     context = {}
 #     return render(req, 'index2.html', context)
@@ -58,4 +55,4 @@ def darkChannel(request):
 #         content_type='application/json'
 #     )
 
-
+# matlab = '/Applications/MATLAB_R2014b.app/bin/matlab -nodesktop -nosplash -r '

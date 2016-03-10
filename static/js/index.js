@@ -46,7 +46,7 @@ $(document).ready(function() {
         if (show == 1) {
             // 正则 获取img中图片名称
             var imgName = document.getElementById(img).files[0].name;
-            alert(imgName);
+            // alert(imgName);
 
             var path_d = 'dark_' + imgName;
             var path_t = 't_' + imgName;
@@ -64,7 +64,7 @@ $(document).ready(function() {
         } else {
             // 正则 获取img中图片名称
             var imgName = document.getElementById(img).files[0].name;
-            alert(imgName);
+            // alert("Dehazing...");
 
             var path_d = 'dark_' + imgName;
             var path_t = 't_' + imgName;
@@ -83,7 +83,7 @@ $(document).ready(function() {
                 },
                 function(ret) {
                     if (debug == 1) {
-                        alert("debyg");
+                        // alert("debyg");
                         $('#guided_t1').html("");
                         $('#res1').html("");
                         $('#dark1').html("");
@@ -131,7 +131,7 @@ $(document).ready(function() {
             // 正则 获取img中图片名称
             var name = document.getElementById("pic1").src;
             var imgName = name.match(/\/(\w+\.(?:png|jpg|gif|bmp))$/i)[1];
-            //alert(imgName);
+            // alert(imgName);
 
             var path_d = 'dark_' + imgName;
             var path_t = 't_' + imgName;
@@ -149,7 +149,7 @@ $(document).ready(function() {
                     'debug': debug,
                 },
                 function(ret) {
-                    //alert(debug);
+                    // alert(debug);
                     if (debug == 1) {
                         $('#dark').append('<img src="/static/image/dark/' + path_d + '" " HEIGHT="" , width=250 >');
                         // $('#rough_t').append('<img src="/static/image/transimission/' + path_t+ '" " HEIGHT="400" , width="200" >');
@@ -240,7 +240,7 @@ $(document).ready(function() {
             // 正则 获取img中图片名称
             var name = document.getElementById("pic3").src;
             var imgName = name.match(/\/(\w+\.(?:png|jpg|gif|bmp))$/i)[1];
-            alert(imgName);
+            // alert(imgName);
 
             var path_d = 'dark_' + imgName;
             var path_t = 't_' + imgName;
@@ -284,7 +284,7 @@ $(document).ready(function() {
         $('#result').html('') //清空前面的结果
 
         var imgName = document.getElementById(img).files[0].name;
-        alert(imgName);
+        // alert(imgName);
         var path_d = 'dark_' + imgName;
         var path_t = 't_' + imgName;
         var path_gt = 'gt_' + imgName;
@@ -324,7 +324,7 @@ $(document).ready(function() {
 
         var imgName = document.getElementById(img).files[0].name;
         var output = 't_' + imgName;
-        //alert(output);
+        // alert(output);
         $.get("/getT/", {
             'func': 'getT',
             'image': imgName,
